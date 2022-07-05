@@ -1,0 +1,51 @@
+#include<iostream>
+#include<ctime>
+#include<cstdlib>
+using namespace std;
+int main ()
+{
+    int certainNum, userNum;
+    int attempts=0;
+    bool win =  false;
+    unsigned seed = time(0);
+    
+    
+    srand(seed);
+    certainNum = 1+rand()%30;
+    
+    cout<<"Can you guess the number of the day?";
+    cin>>userNum;
+    while (!win)
+    {
+        if (userNum>certainNum)
+        {
+            cout<<"It's a little high. Please, Try again."<<endl;
+            cin>>userNum;
+            attempts++;
+            
+        }
+        else if (userNum<certainNum)
+        {
+            cout<<"It's a little low. Please, Try again."<<endl;
+            cin>>userNum;
+            attempts++;
+            
+        }
+        
+        else
+        
+            attempts++;
+            cout<<"Hooray; you won!!!!!";
+            win=true;
+        
+        
+    }
+    
+    
+    
+    
+    
+    return 0;
+    
+}
+
